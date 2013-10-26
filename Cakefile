@@ -1,4 +1,4 @@
-# v1.3.0 October 26, 2013
+# v1.3.1 October 26, 2013
 # https://github.com/bevry/base
 
 
@@ -138,7 +138,7 @@ actions =
 			# npm publish
 			spawn(NPM, ['publish'], {stdio:'inherit', cwd:APP_DIR}).on 'close', safe next, ->
 				# git tag
-				spawn(GIT, ['tag', 'v'+PACKAGE_DATA.version], {stdio:'inherit', cwd:APP_DIR}).on('close', safe next)
+				spawn(GIT, ['tag', 'v'+PACKAGE_DATA.version, '-a'], {stdio:'inherit', cwd:APP_DIR}).on('close', safe next)
 
 
 # =====================================

@@ -181,7 +181,7 @@ class Getter
 		me = @
 
 		# Prepare feed
-		feedUrl = "http://registry.npmjs.org/-/_view/byKeyword?startkey=%5B%22#{keyword}%22%5D&endkey=%5B%22docpad-plugin%22,%7B%7D%5D&group_level=3"
+		feedUrl = "http://registry.npmjs.org/-/_view/byKeyword?startkey=%5B%22#{keyword}%22%5D&endkey=%5B%22#{keyword}%22,%7B%7D%5D&group_level=3"
 		feedOptions =
 			url: feedUrl
 			parse: 'json'

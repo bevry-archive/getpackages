@@ -1,7 +1,7 @@
 {
   "title": "Get Packages",
   "name": "getpackages",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Fetch the information for packages inside the npm registry",
   "homepage": "https://github.com/bevry/getpackages",
   "license": "MIT",
@@ -57,7 +57,7 @@
     "url": "https://github.com/bevry/getpackages.git"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=4"
   },
   "editions": [
     {

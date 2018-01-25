@@ -1,5 +1,4 @@
 # Import
-extendr = require('extendr')
 typeChecker = require('typechecker')
 {TaskGroup} = require('taskgroup')
 
@@ -21,13 +20,13 @@ class Getter
 		@entriesMap = {}
 
 		# Extend configuration
-		extendr.extend(@config, {
+		Object.assign(@config, {
 			log: null
 			onlyLatest: true
 		}, opts)
 
 		# Feedr
-		@feedr = new (require('feedr').Feedr)(@config)
+		@feedr = require('feedr').create(@config)
 
 		# Chain
 		@
@@ -153,7 +152,7 @@ class Getter
 		# we thought it was due to url length but that doesn't seem to be the case
 		# 1732 url with 80 repos fails, 1732 url with 79 repos passes
 		entries = []
-		tasks = new TaskGroup().setConfig(concurrency:0).once 'complete', (err) ->
+		tasks = TaskGroup.create(concurrency:0).done (err) ->
 			# Check
 			return next(err, [])  if err
 			result = me.getEntries(entries)

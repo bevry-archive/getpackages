@@ -1,6 +1,6 @@
 # Import
-{expect} = require('chai')
 joe = require('joe')
+{equal, errorEqual} = require('assert-helpers')
 
 # Test
 joe.suite 'getpackages', (suite,test) ->
@@ -8,7 +8,7 @@ joe.suite 'getpackages', (suite,test) ->
 
 	# Create our contributors instance
 	test 'create', ->
-		getter = require('../../').create(
+		getter = require('../').create(
 			log: console.log
 			onlyLatest: true
 		)
@@ -17,27 +17,27 @@ joe.suite 'getpackages', (suite,test) ->
 	suite 'by names', (suite,test) ->
 		test 'fetch', (done) ->
 			getter.fetchPackagesByNames ['getcontributors', 'getrepos'], (err,entries) ->
-				expect(err).to.be.null
-				expect(entries).to.be.an('array')
-				console.log entries
-				expect(entries.length).to.not.equal(0)
+				errorEqual(err, null)
+				equal(Array.isArray(entries), true)
+				console.log(entries)
+				equal(entries.length > 0, true)
 				return done()
 
 		test 'combined result', ->
 			entries = getter.getEntries()
-			expect(entries).to.be.an('array')
-			expect(entries.length).to.not.equal(0)
+			equal(Array.isArray(entries), true)
+			equal(entries.length > 0, true)
 
 	# Fetch by keyword
 	suite 'by keyword', (suite,test) ->
 		test 'fetch', (done) ->
 			getter.fetchPackagesByKeyword "docpad-plugin", (err,entries) ->
-				expect(err).to.be.null
-				expect(entries).to.be.an('array')
-				expect(entries.length).to.not.equal(0)
+				errorEqual(err, null)
+				equal(Array.isArray(entries), true)
+				equal(entries.length > 0, true)
 				return done()
 
 		test 'combined result', ->
 			entries = getter.getEntries()
-			expect(entries).to.be.an('array')
-			expect(entries.length).to.not.equal(0)
+			equal(Array.isArray(entries), true)
+			equal(entries.length > 0, true)

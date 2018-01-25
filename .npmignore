@@ -1,8 +1,17 @@
-# v1.3.0 October 26, 2013
+# 2017 April 3
 # https://github.com/bevry/base
 
 # Temp Files
+yarn.lock
+**/.docpad.db
+**/out.*
 **/*.log
+**/*.cpuprofile
+**/*.heapsnapshot
+
+# Editor Files
+.c9/
+.vscode/
 
 # Build Files
 build/
@@ -10,17 +19,36 @@ components/
 bower_components/
 node_modules/
 
+# Private Files
+.env
+
+# Documentation Files
+docs/
+guides/
+BACKERS.md
+CONTRIBUTING.md
+HISTORY.md
+
 # Development Files
+web/
+**/example*
+**/test*
+.editorconfig
+.eslintrc*
+.jshintrc
+.jscrc
+coffeelint*
 .travis*
+nakefile*
 Cakefile
 Makefile
-BACKERS.md
-CONITRUBING.md
-HISTORY.md
-**/src/
-**/test/
 
 # Other Package Definitions
 template.js
 component.json
 bower.json
+
+# =====================================
+# CUSTOM MODIFICATIONS
+
+# None

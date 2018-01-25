@@ -1,4 +1,5 @@
 # Import
+extendr = require('extendr')
 typeChecker = require('typechecker')
 {TaskGroup} = require('taskgroup')
 
@@ -20,7 +21,7 @@ class Getter
 		@entriesMap = {}
 
 		# Extend configuration
-		Object.assign(@config, {
+		extendr.extend(@config, {
 			log: null
 			onlyLatest: true
 		}, opts)

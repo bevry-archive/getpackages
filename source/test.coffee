@@ -8,7 +8,7 @@ joe.suite 'getpackages', (suite,test) ->
 
 	# Create our contributors instance
 	test 'create', ->
-		getter = require('../').create(
+		getter = require('./').create(
 			log: console.log
 			onlyLatest: true
 		)

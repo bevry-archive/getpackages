@@ -96,7 +96,7 @@
     "extendr": "^3.2.2",
     "feedr": "^2.13.5",
     "taskgroup": "^5.0.1",
-    "typechecker": "^4.4.1"
+    "typechecker": "^5.0.0"
   },
   "devDependencies": {
     "assert-helpers": "^4.5.0",

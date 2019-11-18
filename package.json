@@ -93,7 +93,7 @@
   "main": "index.js",
   "dependencies": {
     "editions": "^1.3.3",
-    "extendr": "^3.2.2",
+    "extendr": "^4.0.0",
     "feedr": "^2.13.5",
     "taskgroup": "^5.0.1",
     "typechecker": "^4.4.1"
